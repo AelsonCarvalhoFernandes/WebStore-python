@@ -15,4 +15,4 @@ class Client_admin(admin.ModelAdmin):
 @admin.register(Seller)
 class Seller_admin(admin.ModelAdmin):
     model = Seller
-    list_display = ['user', 'cnpj','created_at', 'updated_at']
+    list_display = ['user', 'name','cnpj','created_at', 'updated_at']
