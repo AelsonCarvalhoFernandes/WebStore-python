@@ -1,5 +1,6 @@
 from django.db import models
 from store.models import Seller
+from djmoney.models.fields import MoneyField
 
 class Product(models.Model):
     seller = models.ForeignKey(Seller, on_delete=models.CASCADE)
@@ -8,7 +9,7 @@ class Product(models.Model):
     description = models.TextField(max_length = 1000, blank = False)
     photo = models.ImageField(upload_to="product", blank = False)
     amount = models.IntegerField(blank = False)
-    price = models.FloatField(blank = False)
+    price = MoneyField(blank = False, max_digits=14, decimal_places=2, default_currency='BRL')
     seles = models.IntegerField(default = 0)
     
     created_at = models.DateTimeField(auto_now_add = True)

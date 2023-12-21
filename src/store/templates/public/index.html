@@ -3,5 +3,24 @@
 {% block title %} Pagina inicial {% endblock %}
 
 {% block content %}
-    <p>Ola mundo!!</p>
+    {% for product in products %}
+
+        <div class="promotions_conteiners">
+
+        </div>
+
+        <div class="products_conteiner">
+            <div class="product_conteiner">
+                <div><img src="{{product.photo.url}}" alt=""></div>
+                <div>
+                    <h1>{{product.name}}</h1>
+                    <div>
+                        <a href="#">{{product.price}}</a>
+                        <p>QTD: {{product.amount}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endfor %}
 {% endblock %}

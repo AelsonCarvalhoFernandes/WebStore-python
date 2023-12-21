@@ -4,13 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
     <title>{% block title %} {% endblock %}</title>
 </head>
 <body>
     
     <header>
+        <div>
+            <h2>Titulo</h2>
+            <img src="#" alt="abrir-menu">
+        </div>
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="#">Pagina Inicial</a></li>
+                    <li><a href="#">Produtos</a></li>
+                    <li><a href="#">Sobre</a></li>
+                </ul>
+            </nav>
+            <div class="conteiner_pesquisa">
+                <form action="#" method="post">
+                    <input type="text" placeholder="Pesquisar">
+                    <button type="submit"><img src="#" alt="enviar"></button>
+                </form>
+            </div>
 
+            <div>
+                {% if user.is_authenticated %}
+                {% else %}
+                {% endif %}
+            </div>
+        </div>
     </header>
 
     <main>
@@ -19,9 +43,9 @@
     </main>
 
     <footer>
-
+        <p>@ ECommerce - 2023 </p>
     </footer>
 
-    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static '/js/script.js' %}"></script>
 </body>
 </html>

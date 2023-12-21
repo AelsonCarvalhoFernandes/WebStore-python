@@ -1,7 +1,9 @@
 from django.shortcuts import render
+from stock.models import Product
 
 def index(request):
-    return render(request, 'public/index.html')
+    products = Product.objects.all()
+    return render(request, 'public/index.html', {'products': products})
 
 def register(request):
     pass
